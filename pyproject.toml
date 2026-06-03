@@ -1,0 +1,40 @@
+[project]
+name = "dishwasher"
+version = "0.1.0"
+description = "Clean, standardize and validate tabular data"
+readme = "README.md"
+authors = [{ name = "Daniel Instebø", email = "daniel@insteboe.org" }]
+requires-python = ">=3.12"
+dependencies = [
+    "fastexcel>=0.20.2",
+    "polars>=1.41.2",
+    "pydantic>=2.13.4",
+    "pyyaml>=6.0.3",
+    "rich>=15.0.0",
+    "ruff>=0.15.15",
+    "typer>=0.26.7",
+]
+
+[project.scripts]
+dishwasher = "dishwasher.cli:app"
+
+[build-system]
+requires = ["uv_build>=0.11.13,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.3",
+    "ruff>=0.15.15",
+    "xlsxwriter>=3.2.9",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
