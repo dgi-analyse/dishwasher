@@ -47,6 +47,7 @@ def test_unsupported_file_type_raises(tmp_path):
     with pytest.raises(ValueError, match="Unsupported file type"):
         read_table(path)
 
+
 def test_read_excel(tmp_path):
     path = tmp_path / "data.xlsx"
 
