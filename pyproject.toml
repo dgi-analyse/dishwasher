@@ -6,6 +6,7 @@ readme = "README.md"
 authors = [{ name = "Daniel Instebø", email = "daniel@insteboe.org" }]
 requires-python = ">=3.12"
 dependencies = [
+    "fastexcel>=0.20.2",
     "polars>=1.41.2",
     "pydantic>=2.13.4",
     "pyyaml>=6.0.3",
